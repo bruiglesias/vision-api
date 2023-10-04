@@ -1,0 +1,3 @@
+vision-env/
+*.pyc
+application/ai/best_model.pt
