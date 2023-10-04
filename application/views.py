@@ -59,6 +59,19 @@ class ModelAPIView(APIView):
             for valor, frequencia in contagem.items():
                 cont_dict[valor] = frequencia
 
+            if "Coliform" not in cont_dict:
+                cont_dict["Coliform"] = "Ausente"
+            
+            if "E.coli" not in cont_dict:
+                cont_dict["E.coli"] = "Ausente"
+
+            if "Coliform10E3" not in cont_dict:
+                cont_dict["Coliform10E3"] = "Ausente"
+
+            if "E.coli10E3" not in cont_dict:
+                cont_dict["E.coli10E3"] = "Ausente"
+
+
 
             # Salve a imagem com as bounding boxes em uma pasta
             output_image_path = os.path.join(settings.MEDIA_ROOT, 'output.jpg')
