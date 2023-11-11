@@ -14,8 +14,9 @@ import random
 
 class ModelAPIView(APIView):
 
-
-
+    def get(self, request, *args, **kwargs):
+        return Response({"API": "OK"}, status=status.HTTP_200_OK)
+    
     def post(self, request, *args, **kwargs):
         # Verifique se a imagem foi enviada na solicitação POST
         if 'image' not in request.data:
