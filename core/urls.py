@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    path('', ModelAPIView.as_view(), name='index'),
     path('admin/', admin.site.urls),
     path('api/predict', ModelAPIView.as_view(), name='model_predict'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # noqa
